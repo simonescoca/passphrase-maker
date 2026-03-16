@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+@layer base {
+  body {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(18, 159, 143, 0.2), transparent 32%),
+      radial-gradient(circle at 85% 18%, rgba(38, 198, 218, 0.18), transparent 30%),
+      linear-gradient(145deg, #f8fafc 0%, #d7f7ff 44%, #eef7f2 100%);
+  }
+
+  .dark body {
+    background:
+      radial-gradient(circle at 14% 6%, rgba(20, 184, 166, 0.2), transparent 30%),
+      radial-gradient(circle at 86% 12%, rgba(6, 182, 212, 0.17), transparent 35%),
+      linear-gradient(145deg, #030712 0%, #0b1322 42%, #12201f 100%);
+  }
+}
+
+@layer components {
+  .touch-btn {
+    min-height: 44px;
+  }
+
+  .label {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-zinc-600 dark:text-zinc-400;
+  }
+}
+
+@layer utilities {
+  .bg-page {
+    background-color: transparent;
+  }
+
+  .bg-page-dark {
+    background-color: transparent;
+  }
+
+  .text-ink {
+    color: #101827;
+  }
+
+  .text-ink-dark {
+    color: #e4effa;
+  }
+
+  .font-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  .motion-rise {
+    animation: rise-in 500ms ease-out both;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
