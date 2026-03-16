@@ -2,7 +2,7 @@ name: Deploy SPA to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Cambia in "master" se il tuo branch principale si chiama così
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -23,17 +23,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Aggiornato a Node.js 22 per rimuovere il warning
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
+      # Aggiunto il flag per risolvere il conflitto con vite 8 e vite-plugin-pwa
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Fetch real dictionaries
-        run: node fetch_dicts.js # Esegue lo script per scaricare i JSON prima della build
+        run: node fetch_dicts.js
 
       - name: Build project
         run: npm run build
