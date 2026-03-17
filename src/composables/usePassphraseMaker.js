@@ -21,6 +21,7 @@ const UI_TRANSLATIONS = {
     controlsDescription: 'Choose language, separator, and number of words.',
     labelLanguage: 'Language',
     labelSeparator: 'Separator',
+    labelRequirements: 'REQUIREMENTS',
     labelWords: 'Words',
     separatorSpace: 'space',
     toggleCapitalizeWords: 'Capitalize Words',
@@ -90,6 +91,7 @@ const UI_TRANSLATIONS = {
     controlsDescription: 'Scegli lingua, separatore e numero di parole.',
     labelLanguage: 'Lingua',
     labelSeparator: 'Separatore',
+    labelRequirements: 'REQUISITI',
     labelWords: 'Parole',
     separatorSpace: 'spazio',
     toggleCapitalizeWords: 'Maiuscole',
@@ -397,7 +399,7 @@ export const usePassphraseMaker = () => {
 
     copiedTimeoutId = window.setTimeout(() => {
       copied.value = false
-    }, 1600)
+    }, 2000)
   }
 
   const applyTheme = () => {
@@ -421,6 +423,9 @@ export const usePassphraseMaker = () => {
     },
     { immediate: true },
   )
+  watch([separator, wordCount, capitalizeWords, includeNumbers], () => {
+    generatePassphrase()
+  })
 
   return {
     BITS_PER_WORD,
