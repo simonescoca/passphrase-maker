@@ -131,7 +131,7 @@ onUnmounted(() => {
       </header>
 
       <section class="motion-rise grid gap-4 rounded-3xl border border-black/15 bg-white/85 p-4 shadow-xl shadow-cyan-900/10 backdrop-blur sm:p-6 md:grid-cols-2 md:gap-6 lg:p-8 dark:border-white/15 dark:bg-zinc-900/70 dark:shadow-black/40">
-        <div class="h-full flex flex-col justify-between lg:h-[580px]">
+        <div class="h-full flex flex-col justify-between lg:h-[620px]">
           <div>
             <h2 class="text-lg font-semibold">{{ uiText.controlsTitle }}</h2>
             <p class="mt-1 text-sm text-zinc-700 dark:text-zinc-300">{{ uiText.controlsDescription }}</p>
@@ -224,7 +224,7 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <div class="h-auto rounded-2xl border border-zinc-300 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-950/60 sm:p-5 lg:h-[580px] lg:flex lg:flex-col lg:justify-between">
+        <div class="h-auto rounded-2xl border border-zinc-300 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-950/60 sm:p-5 lg:h-[620px] lg:flex lg:flex-col lg:justify-between">
           <div>
             <h2 class="text-lg font-semibold">{{ uiText.passphraseTitle }}</h2>
             <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{{ uiText.entropyLabel(entropyBits) }}</p>
